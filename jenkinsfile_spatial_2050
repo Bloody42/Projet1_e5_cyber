@@ -46,24 +46,3 @@ pipeline {
         }
     }
 }
-
-// Jobs
-def buildJob = {
-    stage('check-de-la-coque') {
-        steps {
-            echo 'Checking de la coque...'
-            sleep 10
-            echo 'Integrité de la coque à 100%.'
-        }
-    }
-}
-
-def testJob = {
-    stage('verification-electronique') {
-        steps {
-            echo "Verification des systemes l'electroniques..."
-            sleep 10
-            echo "Integrite du systeme electronique à 100%."
-        }
-    }
-}

@@ -32,17 +32,31 @@ pipeline {
                 }
             }
         }
-        stage ('MAJ plage des dates') {
+        stage('build') {
             steps {
-                echo 'Mise a jour des dates'
-                sleep 1
+                echo 'Check de la coque'
+                sleep 10
+                echo 'Integrite de la coque 100%'
+                sleep 5
+                echo 'Reduction de la concentration de reservoirs de carburant'
+                sleep 10
+                echo 'Reduction a 1%'
             }
         }
-        stage ('BUILD') {
+        stage('test') {
             steps {
-                echo 'Building app...'
-                sleep 1
-                echo 'Build OK!'
-                }
+                echo 'Verification des systemes electroniques'
+                sleep 10
+                echo 'Integrite du systeme electronique 100%'
+                sleep 5
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'Promotion de soldes d ete Saturne'
+                sleep 10
+                echo 'Categorisation des reservations par destination'
+                sleep 10
+            }
         }
     }

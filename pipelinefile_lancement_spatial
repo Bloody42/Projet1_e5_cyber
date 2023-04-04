@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'NAME', description: 'Please tell me your name')
+        string(name: 'AGE', description: 'What is your age?')
+        choice(name: 'SEX', choices: ['MALE','FEMALE','OTHER'], description: 'Choose your sex')
+        boolean(name: 'RECRUTEMENT', description: 'Do you want this job?')
+        choice(name: 'JOB', choices: ['Propulsion','Aerospace','Astronomy'], description: 'Choose your speciality')
+
+    }
+    stages {
+        stage ('Recrutement') {
+            steps {
+                script {
+                    def name = "${params.NAME}"
+                    def age = "${params.AGE}"
+                    def sex = "${params.SEX}"
+                    def recrut = "${params.RECRUTEMENT}"
+                    def job = "${params.JOB}"
+                    if (job == "Propulsion") {
+                        echo "Welcome to the team"
+                    }
+                    else {
+                        echo "Sorry, you don't match our search"
+                    }
+                    if (recrut == false) {
+                        echo "Goodbye"
+                    }
+                    else {
+                        echo "glad to hear it"
+                    }
+                }
+            }
+        }
+        stage ('MAJ plage des dates')
+            steps {
+                echo 'Mise a jour des dates'
+                sleep 1
+            }
+        stage ('Reduction temps de chargement')
+        stage ('BUILD') {
+            steps {
+                echo 'Building app...'
+                sleep 1
+                echo 'Build OK!'

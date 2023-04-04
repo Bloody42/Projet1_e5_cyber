@@ -16,6 +16,20 @@ pipeline {
                 echo 'Build OK!'
             }
         }
+        stage('check-de-la-coque') {
+            steps {
+                echo 'Checking de la coque...'
+                sleep 10
+                echo 'Integrité de la coque à 100%.'
+            }
+        }
+        stage('verification-electronique') {
+            steps {
+                echo "Verification des systemes l'electroniques..."
+                sleep 10
+                echo "Integrite du systeme electronique à 100%."
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing...'
@@ -50,30 +64,6 @@ def testJob = {
             echo "Verification des systemes l'electroniques..."
             sleep 10
             echo "Integrite du systeme electronique à 100%."
-        }
-    }
-}
-
-// Pipeline execution
-pipeline {
-    agent any
-    stages {
-        stage('Build') {
-            steps {
-                buildJob()
-                sleep 5
-            }
-        }
-        stage('Test') {
-            steps {
-                testJob()
-                sleep 5
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'No deployment required.'
-            }
         }
     }
 }

@@ -23,7 +23,7 @@ pipeline {
                     else {
                         echo "Sorry, you don't match our search"
                     }
-                    if (recrut == false) {
+                    if (recrut == 'NO') {
                         echo "Goodbye"
                     }
                     else {

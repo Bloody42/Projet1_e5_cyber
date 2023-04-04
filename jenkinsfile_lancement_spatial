@@ -4,7 +4,7 @@ pipeline {
         string(name: 'NAME', description: 'Please tell me your name')
         string(name: 'AGE', description: 'What is your age?')
         choice(name: 'SEX', choices: ['MALE','FEMALE','OTHER'], description: 'Choose your sex')
-        boolean(name: 'RECRUTEMENT', description: 'Do you want this job?')
+        choice(name: 'RECRUTEMENT', choices: ['YES','NO'], description: 'Do you want this job?')
         choice(name: 'JOB', choices: ['Propulsion','Aerospace','Astronomy'], description: 'Choose your speciality')
 
     }

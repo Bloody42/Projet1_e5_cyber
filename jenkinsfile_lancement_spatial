@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     def fly = "${params.FLYLIST}"
-                    def class = "${params.FLYCLASS}"
+                    def flyclass = "${params.FLYCLASS}"
                     def hours = "${params.HOURS}"
                     echo "Your fly as been selected !"
                 }

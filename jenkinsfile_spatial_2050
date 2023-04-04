@@ -52,9 +52,9 @@ def buildJob = {
 def testJob = {
     stage('verification-electronique') {
         steps {
-            echo 'Verification des systemes l'electroniques...'
+            echo "Verification des systemes l'electroniques..."
             sleep 10
-            echo 'Integrite du systeme electronique à 100%.'
+            echo "Integrite du systeme electronique à 100%."
         }
     }
 }

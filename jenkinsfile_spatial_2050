@@ -15,3 +15,73 @@ pipeline {
                 echo 'Building app...'
                 sleep 1
                 echo 'Build OK!'
+                }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                sleep 1
+                echo 'Tests passed successfully.'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                sleep 10
+                echo 'Deployment completed successfully.'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Pipeline execution completed.'
+        }
+    }
+}
+
+// Jobs
+def buildJob = {
+    stage('check-de-la-coque') {
+        steps {
+            echo 'Checking de la coque...'
+            sleep 10
+            echo 'Integrité de la coque à 100%.'
+        }
+    }
+}
+
+def testJob = {
+    stage('verification-electronique') {
+        steps {
+            echo 'Verification des systemes l'electroniques...'
+            sleep 10
+            echo 'Integrite du systeme electronique à 100%.'
+        }
+    }
+}
+
+// Pipeline execution
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                buildJob()
+            }
+        }
+        stage('Test') {
+            steps {
+                testJob()
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'No deployment required.'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Pipeline execution completed.'
+        }
+    }
+}

@@ -32,14 +32,12 @@ pipeline {
                     else {
                         echo "glad to hear it"
                     }
-                }
-            }
-            steps {
-                script {
-                    def fly = "${params.FLYLIST}"
-                    def flyclass = "${params.FLYCLASS}"
-                    def hours = "${params.HOURS}"
-                    echo "Your fly as been selected !"
+                    script {
+                        def fly = "${params.FLYLIST}"
+                        def flyclass = "${params.FLYCLASS}"
+                        def hours = "${params.HOURS}"
+                        echo "Your fly as been selected !"
+                    }
                 }
             }
         }

@@ -61,11 +61,13 @@ pipeline {
         stage('Build') {
             steps {
                 buildJob()
+                sleep 5
             }
         }
         stage('Test') {
             steps {
                 testJob()
+                sleep 5
             }
         }
         stage('Deploy') {

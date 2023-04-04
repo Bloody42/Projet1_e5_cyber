@@ -6,6 +6,9 @@ pipeline {
         choice(name: 'SEX', choices: ['MALE','FEMALE','OTHER'], description: 'Choose your sex')
         choice(name: 'RECRUTEMENT', choices: ['YES','NO'], description: 'Do you want this job?')
         choice(name: 'JOB', choices: ['Propulsion','Aerospace','Astronomy'], description: 'Choose your speciality')
+        choice(name: 'FLYLIST', choices: ['Vol1','Vol2','Vol3','Vol4','Vol5'], description: 'Choose your fly')
+        choice(name: 'FLYCLASS', choices: ['Free','2nd_class','1er_class','premium','excelcium'], description: 'Choose your class fly')
+        choice(name: 'HOURS', choices: ['10:00','12:00','15:00','18:00','22:00'], description: 'Choose your hours')
 
     }
     stages {
@@ -29,6 +32,14 @@ pipeline {
                     else {
                         echo "glad to hear it"
                     }
+                }
+            }
+            steps {
+                script {
+                    def fly = "${params.FLYLIST}"
+                    def class = "${params.FLYCLASS}"
+                    def hours = "${params.HOURS}"
+                    echo "Your fly as been selected !"
                 }
             }
         }

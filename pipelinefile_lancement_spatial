@@ -32,14 +32,17 @@ pipeline {
                 }
             }
         }
-        stage ('MAJ plage des dates')
+        stage ('MAJ plage des dates') {
             steps {
                 echo 'Mise a jour des dates'
                 sleep 1
             }
-        stage ('Reduction temps de chargement')
+        }
         stage ('BUILD') {
             steps {
                 echo 'Building app...'
                 sleep 1
                 echo 'Build OK!'
+                }
+        }
+    }
